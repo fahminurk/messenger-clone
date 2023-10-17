@@ -17,7 +17,6 @@ const getUsers = async () => {
         },
       },
     });
-    console.log(users);
 
     return users;
   } catch (error) {
