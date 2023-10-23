@@ -10,7 +10,6 @@ const getConversationById = async (conversationId: string) => {
       where: { id: conversationId },
       include: { users: true },
     });
-    console.log(conversation);
 
     return conversation;
   } catch (error) {
