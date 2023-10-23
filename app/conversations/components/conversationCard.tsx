@@ -1,6 +1,7 @@
 "use client";
 
 import Avatar from "@/app/components/avatar";
+import AvatarGroup from "@/app/components/avatarGroup";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import { FullConversationType } from "@/app/types";
 import clsx from "clsx";
@@ -60,7 +61,11 @@ const ConversationCard: React.FC<ConversationCardProps> = ({
       )}
       onClick={handleClick}
     >
-      <Avatar user={otherUser} />
+      {data.isGroup ? (
+        <AvatarGroup users={data.users} />
+      ) : (
+        <Avatar user={otherUser} />
+      )}
       <div className="min-w-0 flex-1">
         <div className="focus:outline-none">
           <div className="flex justify-between items-center mb-1">
